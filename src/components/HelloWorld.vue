@@ -1,7 +1,9 @@
 <template>
 	<v-container>
 		<v-row class="text-center">
-			<v-col col="12"> </v-col>
+			<v-col col="12">
+				<NotificationCard> </NotificationCard>
+			</v-col>
 			<v-col cols="12">
 				<v-img :src="require('../assets/logo.svg')" class="my-3" contain height="200" />
 			</v-col>
@@ -58,8 +60,12 @@
 </template>
 
 <script>
+	import NotificationCard from "./NotificationCard.vue"
 	export default {
 		name: "HelloWorld",
+		components: {
+			NotificationCard,
+		},
 		data: () => ({
 			ecosystem: [
 				{
