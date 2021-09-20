@@ -1,8 +1,8 @@
 <template>
-	<v-container>
+	<v-container class="mt-15">
 		<v-row>
 			<v-col cols="12">
-				<h1>Order notifications</h1>
+				<h1>Order Notifications</h1>
 			</v-col>
 		</v-row>
 		<v-row>

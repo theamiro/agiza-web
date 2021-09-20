@@ -1,8 +1,8 @@
 <template>
 	<router-link class="text-decoration-none" :to="`/products/${product.id}`">
 		<v-card elevation="0" class="rounded-xl">
-			<v-img v-if="product.image" class="rounded-xl" height="200" :src="product.image"></v-img>
-			<v-img v-else class="rounded-xl" height="200" src="@/assets/placeholder.jpg"></v-img>
+			<v-img v-if="product.image" class="rounded-xl" height="180" :src="product.image"></v-img>
+			<v-img v-else class="rounded-xl" height="180" src="@/assets/placeholder.jpg"></v-img>
 			<v-card-title class="pb-0">{{ product.title }}</v-card-title>
 			<v-card-text class="pb-0">
 				{{ product.description }}

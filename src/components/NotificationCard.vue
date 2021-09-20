@@ -4,7 +4,7 @@
 			<v-row class="mx-0 justify-space-between align-center">
 				<div>
 					<v-card-title class="text--dark">
-						<strong>{{ customerName }}</strong>
+						<h3 class="mb-3 font-weight-bold">{{ customerName }}</h3>
 					</v-card-title>
 
 					<v-card-subtitle>
@@ -16,7 +16,7 @@
 						</p>
 					</v-card-subtitle>
 				</div>
-				<v-btn color="primary">View Order</v-btn>
+				<v-btn color="primary" elevation="0">View Order</v-btn>
 			</v-row>
 		</v-card-text>
 	</v-card>

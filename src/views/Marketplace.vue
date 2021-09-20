@@ -1,13 +1,18 @@
 <template>
-	<v-container>
+	<v-container class="mt-15">
 		<v-row>
 			<v-col cols="12">
-				<v-text-field dense rounded filled class="rounded-lg" v-model="searchTerm" label="Search" required> </v-text-field>
+				<h1>Marketplace</h1>
 			</v-col>
 		</v-row>
-		<v-row>
-			<v-col cols="3" v-for="product in products" :key="product.id">
+		<v-row v-if="products.length">
+			<v-col xl="2" lg="3" md="4" sm="6" v-for="product in products" :key="product.id">
 				<product-card :product="product"></product-card>
+			</v-col>
+		</v-row>
+		<v-row v-else>
+			<v-col cols="12" class="text-center">
+				<h2>Hey, Seems like there aren't any products at the moment. Weird. Check back soon.</h2>
 			</v-col>
 		</v-row>
 	</v-container>

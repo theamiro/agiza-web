@@ -1,7 +1,7 @@
 <template>
-	<v-container>
+	<v-container class="h-100 d-flex align-center">
 		<v-row class="justify-center">
-			<v-col cols="12 d-flex justify-center">
+			<v-col cols="12" class="d-flex justify-center">
 				<v-card elevation="0" class="rounded-lg" width="420px">
 					<v-card-text class="pa-15">
 						<h2 class="text-h5 font-weight-bold">Add Customer</h2>
