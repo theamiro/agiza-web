@@ -1,38 +1,31 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import Home from "../views/Home.vue"
+import Marketplace from "../views/Marketplace.vue"
+import Notifications from "../views/Notifications.vue"
+import SingleProduct from "../views/SingleProduct.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
 	{
 		path: "/",
-		name: "Home",
-		component: Home,
-	},
-	{
-		path: "/about",
-		name: "About",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
+		name: "Marketplace",
+		component: Marketplace,
 	},
 	{
 		path: "/notifications",
-		name: "Order Notifications",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ "../views/Notifications.vue"),
+		name: Notifications,
+		component: () => import("../views/Notifications.vue"),
 	},
 	{
 		path: "/add-customer",
 		name: "Add Customer",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ "../views/AddCustomer.vue"),
+		component: () => import("../views/AddCustomer.vue"),
+	},
+	{
+		path: "/product/:id",
+		name: SingleProduct,
+		component: () => import("../views/SingleProduct.vue"),
 	},
 ]
 

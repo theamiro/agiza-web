@@ -2,7 +2,7 @@
 	<v-app>
 		<navigation />
 		<v-main style="background-color: #f5f5f5">
-			<router-view />
+			<router-view class="px-15" />
 		</v-main>
 	</v-app>
 </template>

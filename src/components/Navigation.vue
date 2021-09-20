@@ -1,6 +1,6 @@
 <template>
 	<v-app-bar app elevation="0" color="white" light>
-		<v-container>
+		<v-container class="px-15">
 			<v-row>
 				<v-col class="d-flex justify-space-between">
 					<div class="d-flex align-center">
