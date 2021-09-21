@@ -1,4 +1,10 @@
 export const mutations = {
+	setIsLoading: (state) => {
+		state.isLoading = true
+	},
+	setIsLoaded: (state) => {
+		state.isLoading = false
+	},
 	setToken: (state, token) => {
 		state.token = token
 	},

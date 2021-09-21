@@ -43,7 +43,7 @@
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.phoneNumber" label="Phone Number" required></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.country" label="Country" required></v-text-field>
 							<div class="d-flex">
-								<v-btn elevation="0" x-large color="primary" block @click="addCustomer()">
+								<v-btn elevation="0" x-large color="primary" block @click="addCustomer()" :disabled="isLoading">
 									Add Customer
 								</v-btn>
 							</div>
@@ -74,7 +74,7 @@
 			...mapActions(["fetchCustomers", "addCustomer"]),
 		},
 		computed: {
-			...mapState(["customers", "customerForm"]),
+			...mapState(["customers", "customerForm", "isLoading"]),
 		},
 	}
 </script>

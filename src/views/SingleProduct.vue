@@ -1,12 +1,13 @@
 <template>
 	<v-container class="mt-15">
 		<v-row class="mb-15">
-			<v-col cols="6">
-				<v-card elevation="0" class="rounded-xl">
-					<v-img class="rounded-xl" height="360" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
+			<v-col lg="4" md="6" sm="12">
+				<v-card elevation="0" class="rounded-xl" width="450">
+					<v-img v-if="product.image" class="rounded-xl" width="450" height="450" :src="product.image"></v-img>
+					<v-img v-else class="rounded-xl" width="450" height="450" src="@/assets/placeholder.jpg"></v-img>
 				</v-card>
 			</v-col>
-			<v-col cols="4">
+			<v-col lg="8" md="6" sm="12">
 				<h1 class="font-weight-bold">{{ product.title }}</h1>
 				<h2>{{ product.currency }} {{ product.price }}</h2>
 				<p>
@@ -50,7 +51,7 @@
 			}
 		},
 		created() {
-			this.fetchProductByID()
+			this.fetchProductByID(this.$route.params.id)
 		},
 		methods: {
 			...mapActions(["fetchProductByID"]),

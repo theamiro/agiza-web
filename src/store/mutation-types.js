@@ -1,3 +1,5 @@
+export const setIsLoading = "setIsLoading"
+export const setIsLoaded = "setIsLoaded"
 export const setToken = "setToken"
 export const logout = "logout"
 export const setProduct = "setProduct" // Single Product

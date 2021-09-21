@@ -1,4 +1,5 @@
 export const state = {
+	isLoading: null,
 	token: "",
 	product: {},
 	products: [],
