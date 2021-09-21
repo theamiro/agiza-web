@@ -14,13 +14,9 @@
 		components: {
 			Navigation,
 		},
-
-		data: () => ({
-			//
-		}),
 	}
 </script>
 
 <style lang="scss">
-	@import "~@/assets/scss/vendors/bootstrap-vue/index";
+	@import "~@/assets/scss/index";
 </style>

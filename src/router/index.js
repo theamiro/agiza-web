@@ -2,11 +2,12 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import Register from "@/views/Register.vue"
 import Marketplace from "@/views/Marketplace.vue"
-import AddCustomer from "@/views/AddCustomer.vue"
+import Customer from "@/views/Customers.vue"
 import Notifications from "@/views/Notifications.vue"
 import SingleProduct from "@/views/SingleProduct.vue"
 import Login from "@/views/Login.vue"
 import { store } from "@/store"
+import { Role } from "../helpers/Role"
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,7 @@ const routes = [
 		component: Marketplace,
 		meta: {
 			requiresAuth: true,
+			role: Role.Customer,
 		},
 	},
 	{
@@ -25,14 +27,16 @@ const routes = [
 		component: Notifications,
 		meta: {
 			requiresAuth: true,
+			role: Role.Agent,
 		},
 	},
 	{
-		path: "/add-customer",
-		name: "AddCustomer",
-		component: AddCustomer,
+		path: "/customers",
+		name: "Customer",
+		component: Customer,
 		meta: {
 			requiresAuth: true,
+			role: Role.Agent,
 		},
 	},
 	{
@@ -57,6 +61,7 @@ const routes = [
 		component: SingleProduct,
 		meta: {
 			requiresAuth: true,
+			role: Role.Customer,
 		},
 	},
 ]

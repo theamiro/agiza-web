@@ -4,7 +4,7 @@
 			<v-row class="align-center">
 				<v-col class="d-flex justify-space-between">
 					<div class="d-flex align-center">
-						<router-link to="/marketplace" class="text-decoration-none text--dark"><h1>Agiza</h1></router-link>
+						<router-link to="/marketplace" class="text-decoration-none"><h1 class="text--black font-weight-medium">agiza</h1></router-link>
 					</div>
 
 					<div class="d-flex align-center">
