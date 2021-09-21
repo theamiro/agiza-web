@@ -19,6 +19,7 @@
 </template>
 
 <script>
+	import { mapActions, mapState } from "vuex"
 	import ProductCard from "../components/ProductCard.vue"
 	export default {
 		name: "Marketplace",
@@ -28,11 +29,16 @@
 		data() {
 			return {
 				searchTerm: "",
-				products: [
-					{ id: "1", image: "https://cdn.vuetifyjs.com/images/cards/cooking.png", title: "Dynamic Rayshield", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 2000, numberInStock: 200, location: "" },
-					{ id: "2", image: "", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: "" },
-				],
 			}
+		},
+		created() {
+			this.fetchProducts()
+		},
+		methods: {
+			...mapActions(["fetchProducts"]),
+		},
+		computed: {
+			...mapState(["products"]),
 		},
 	}
 </script>

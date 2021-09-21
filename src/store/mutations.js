@@ -5,4 +5,10 @@ export const mutations = {
 	logout: (state) => {
 		state.token = null
 	},
+	setProduct: (state, product) => {
+		state.product = product
+	},
+	setProducts: (state, products) => {
+		state.products = products
+	},
 }

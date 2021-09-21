@@ -1,5 +1,5 @@
 <template>
-	<router-link class="text-decoration-none" :to="`/products/${product.id}`">
+	<router-link class="text-decoration-none" :to="{ name: 'SingleProduct', params: { id: product.id } }">
 		<v-card elevation="0" class="rounded-xl">
 			<v-img v-if="product.image" class="rounded-xl" height="180" :src="product.image"></v-img>
 			<v-img v-else class="rounded-xl" height="180" src="@/assets/placeholder.jpg"></v-img>

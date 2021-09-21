@@ -7,14 +7,15 @@
 				</v-card>
 			</v-col>
 			<v-col cols="4">
-				<h1 class="font-weight-bold">Product Name</h1>
-				<h2>KES 2000</h2>
+				<h1 class="font-weight-bold">{{ product.title }}</h1>
+				<h2>{{ product.currency }} {{ product.price }}</h2>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar egestas aliquam enim et. Ultrices fames lectus eu sit mattis ut vel laoreet nisl. Et sapien sed adipiscing vestibulum. Malesuada mi ultrices amet nulla ut. Eu aliquet aliquam viverra aliquam vel faucibus. Tempus
-					morbi eu lectus ultrices ultrices. Nisi, nunc odio dolor bibendum.
+					{{ product.description }}
 				</p>
-				<p class="font-weight-medium text--secondary">Available in your country</p>
-				<v-text-field class="text-center"></v-text-field>
+				<p class="text--secondary">
+					<small>{{ product.numberInStock }} in stock</small>
+				</p>
+				<v-text-field class="text-center" placeholder="1" v-model="quantity"></v-text-field>
 				<v-btn color="primary" large elevation="0">Place your Order</v-btn>
 			</v-col>
 		</v-row>
@@ -30,6 +31,7 @@
 	</v-container>
 </template>
 <script>
+	import { mapState, mapActions } from "vuex"
 	import ProductCard from "../components/ProductCard.vue"
 	export default {
 		name: "SingleProduct",
@@ -38,7 +40,7 @@
 		},
 		data() {
 			return {
-				product: {},
+				quantity: "",
 				upsellers: [
 					{ id: "1", image: "https://cdn.vuetifyjs.com/images/cards/cooking.png", title: "Dynamic Rayshield", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 2000, numberInStock: 200, location: "" },
 					{ id: "2", image: "", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: "" },
@@ -46,6 +48,15 @@
 					{ id: "4", image: "", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: "" },
 				],
 			}
+		},
+		created() {
+			this.fetchProductByID()
+		},
+		methods: {
+			...mapActions(["fetchProductByID"]),
+		},
+		computed: {
+			...mapState(["product"]),
 		},
 	}
 </script>
