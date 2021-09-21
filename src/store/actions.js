@@ -34,4 +34,29 @@ export const actions = {
 		}
 		commit(mutations.setProduct, product)
 	},
+	addCustomer: ({ commit, state, getters }) => {
+		commit(mutations.setCustomerForm, state.customerForm)
+		const { firstName, lastName, emailAddress, phoneNumber, country } = getters.getCustomerForm
+		const customer = {
+			id: getters.getCustomers.length + 1,
+			firstName: firstName,
+			lastName: lastName,
+			emailAddress: emailAddress,
+			phoneNumber: phoneNumber,
+			country: country,
+		}
+		commit(mutations.addCustomer, customer)
+		commit(mutations.clearCustomerForm)
+	},
+	fetchCustomers: ({ commit }) => {
+		const customers = [
+			{ id: "1", firstName: "Johansen", lastName: "Doe", emailAddress: "johndoe@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
+			{ id: "2", firstName: "Johansen", lastName: "Doe", emailAddress: "johndoe@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
+			{ id: "3", firstName: "Johansen", lastName: "Doe", emailAddress: "johndoe@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
+			{ id: "4", firstName: "Johansen", lastName: "Doe", emailAddress: "johndoe@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
+			{ id: "5", firstName: "Johansen", lastName: "Doe", emailAddress: "johndoe@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
+			{ id: "6", firstName: "Johansen", lastName: "Doe", emailAddress: "johndoe@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
+		]
+		commit(mutations.setCustomers, customers)
+	},
 }

@@ -11,4 +11,16 @@ export const mutations = {
 	setProducts: (state, products) => {
 		state.products = products
 	},
+	setCustomers: (state, customers) => {
+		state.customers = customers
+	},
+	addCustomer: (state, customer) => {
+		state.customers.push(customer)
+	},
+	setCustomerForm: (state, form) => {
+		state.customerForm = form
+	},
+	clearCustomerForm: (state) => {
+		state.customerForm = {}
+	},
 }

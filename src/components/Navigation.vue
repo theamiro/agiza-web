@@ -8,7 +8,7 @@
 					</div>
 
 					<div class="d-flex align-center">
-						<v-btn to="/add-customer" elevation="0" class="ml-3">Customer</v-btn>
+						<v-btn to="/customers" elevation="0" class="ml-3">Customer</v-btn>
 						<v-btn to="/notifications" elevation="0" class="ml-3">Notifications</v-btn>
 
 						<v-btn v-if="isLoggedIn" elevation="0" class="ml-3" @click="logout()">Logout</v-btn>
