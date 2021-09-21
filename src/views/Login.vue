@@ -4,8 +4,7 @@
 			<v-col cols="12" class="d-flex justify-center">
 				<v-card elevation="0" class="rounded-lg" width="420px">
 					<v-card-text class="pa-15">
-						<h2 class="text-h5 font-weight-bold">Sign in</h2>
-						<p class="">Login to find all that you have been looking for. Edge your business forward with super deals.</p>
+						<h2 class="text-h5 font-weight-bold mb-3">Sign in</h2>
 						<v-form v-model="valid">
 							<v-text-field dense rounded filled class="rounded-lg" v-model="emailAddress" label="Email Address" required autofocus></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="password" label="Password" required @keypress.enter="login()"></v-text-field>
