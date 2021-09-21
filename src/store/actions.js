@@ -44,6 +44,7 @@ export const actions = {
 		}
 		commit(mutations.addCustomer, customer)
 		commit(mutations.clearCustomerForm)
+		console.log(router.base)
 		commit(mutations.setIsLoaded)
 	},
 	fetchCustomers: ({ commit }) => {

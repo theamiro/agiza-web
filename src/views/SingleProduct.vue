@@ -53,6 +53,11 @@
 		created() {
 			this.fetchProductByID(this.$route.params.id)
 		},
+		watch: {
+			$route() {
+				this.fetchProductByID(this.$route.params.id)
+			},
+		},
 		methods: {
 			...mapActions(["fetchProductByID"]),
 		},

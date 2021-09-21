@@ -1,5 +1,5 @@
 <template>
-	<v-container class="mt-15">
+	<v-container class="">
 		<v-row>
 			<v-col cols="12">
 				<h1>Order Notifications</h1>

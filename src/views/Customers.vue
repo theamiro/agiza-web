@@ -36,14 +36,14 @@
 					<v-card-text class="pa-10">
 						<h2 class="text-h5 font-weight-bold">Add Customer</h2>
 						<p class="">Enter customer information to add them onto agiza platform</p>
-						<v-form v-model="valid">
+						<v-form>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.firstName" label="First Name" required></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.lastName" label="Last Name" required></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.emailAddress" label="Email Address" required></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.phoneNumber" label="Phone Number" required></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="customerForm.country" label="Country" required></v-text-field>
 							<div class="d-flex">
-								<v-btn elevation="0" x-large color="primary" block @click="addCustomer()" :disabled="isLoading">
+								<v-btn elevation="0" x-large color="primary" block @click="addCustomer()" :disabled="isLoading || !isValid">
 									Add Customer
 								</v-btn>
 							</div>
@@ -61,7 +61,7 @@
 		name: "AddCustomer",
 		data() {
 			return {
-				valid: false,
+				isValid: !!this.customerForm,
 			}
 		},
 		components: {
@@ -70,6 +70,9 @@
 		created() {
 			this.fetchCustomers()
 		},
+		watch: {
+            
+        },
 		methods: {
 			...mapActions(["fetchCustomers", "addCustomer"]),
 		},

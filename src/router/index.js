@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueRouter from "vue-router"
+import Router from "vue-router"
 import Register from "@/views/Register.vue"
 import Marketplace from "@/views/Marketplace.vue"
 import Customer from "@/views/Customers.vue"
@@ -9,7 +9,7 @@ import Login from "@/views/Login.vue"
 import { store } from "@/store"
 import { Role } from "../helpers/Role"
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
 const routes = [
 	{
@@ -66,7 +66,7 @@ const routes = [
 	},
 ]
 
-const router = new VueRouter({
+const router = new Router({
 	routes,
 	mode: "history",
 })
