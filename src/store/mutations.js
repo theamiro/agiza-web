@@ -33,4 +33,7 @@ export const mutations = {
 	clearCustomerForm: (state) => {
 		state.customerForm = {}
 	},
+	setNotifications: (state, notifications) => {
+		state.notifications = notifications
+	},
 }

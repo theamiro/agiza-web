@@ -9,3 +9,4 @@ export const setCustomers = "setCustomers" // All Customers
 export const addCustomer = "addCustomer"
 export const setCustomerForm = "setCustomerForm"
 export const clearCustomerForm = "clearCustomerForm"
+export const setNotifications = "setNotifications"

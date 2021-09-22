@@ -1,14 +1,16 @@
 import router from "@/router"
 import * as mutations from "./mutation-types"
-import { mockProducts, mockCustomers } from "../mock/index"
+import { mockProducts, mockCustomers, mockNotifications } from "../mock/"
+import { Role } from "../helpers/Role"
 
 export const actions = {
 	login: ({ commit }, user) => {
 		commit(mutations.setIsLoading)
 		const token = process.env.VUE_APP_DUMMY_TOKEN
 		console.log(user)
+
 		commit(mutations.setToken, token)
-		commit(mutations.setCurrentUser, user)
+		commit(mutations.setCurrentUser, { emailAddress: user.emailAddress, password: user.password, role: Role.Agent })
 		router.push("/marketplace")
 		commit(mutations.setIsLoaded)
 	},
@@ -52,6 +54,12 @@ export const actions = {
 		commit(mutations.setIsLoading)
 		const customers = mockCustomers
 		commit(mutations.setCustomers, customers)
+		commit(mutations.setIsLoaded)
+	},
+	fetchNotifications: ({ commit }) => {
+		commit(mutations.setIsLoading)
+		const notifications = mockNotifications
+		commit(mutations.setNotifications, notifications)
 		commit(mutations.setIsLoaded)
 	},
 }

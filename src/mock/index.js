@@ -45,3 +45,9 @@ export const mockCustomers = [
 	{ id: "5", firstName: "Paul", lastName: "Mwangi", emailAddress: "pwangi@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
 	{ id: "6", firstName: "Kilimo", lastName: "Kuria", emailAddress: "kilimo@mail.com", phoneNumber: "+25470000400", country: "Kenya" },
 ]
+
+export const mockNotifications = [
+	{ id: "1", customerName: "Johansen Mwajuma", message: "Order Placed a few minutes ago", time: "08:09am", date: "21 Sep 21" },
+	{ id: "2", customerName: "Johansen Mwajuma", message: "Order Placed a few minutes ago", time: "08:09am", date: "21 Sep 21" },
+	{ id: "3", customerName: "Johansen Mwajuma", message: "Order Placed a few minutes ago", time: "08:09am", date: "21 Sep 21" },
+]

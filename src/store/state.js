@@ -12,6 +12,11 @@ export const state = {
 		country: null,
 	},
 	customer: {},
-	currentUser: {},
+	currentUser: {
+		emailAddress: "",
+		password: "",
+		role: "",
+	},
 	orders: [],
+	notifications: [],
 }
