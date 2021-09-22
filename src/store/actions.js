@@ -80,7 +80,7 @@ export const actions = {
 	},
 	fetchNotifications: ({ commit }) => {
 		commit(mutations.setIsLoading)
-		const notifications = mockNotifications
+		const notifications = JSON.parse(localStorage.getItem("notifications")) || mockNotifications
 		commit(mutations.setNotifications, notifications)
 		commit(mutations.setIsLoaded)
 	},
