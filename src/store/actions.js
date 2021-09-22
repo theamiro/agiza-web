@@ -2,7 +2,9 @@ import router from "@/router"
 import * as mutations from "./mutation-types"
 import { mockProducts, mockUsers, mockNotifications } from "../mock/"
 import { Role } from "../helpers/Role"
+const moment = require("moment")
 
+// TODO: Add async actions
 export const actions = {
 	login: ({ commit }, credentials) => {
 		commit(mutations.setIsLoading)
@@ -35,7 +37,7 @@ export const actions = {
 		commit(mutations.setCustomerForm, state.customerForm)
 		const { firstName, lastName, emailAddress, phoneNumber, country } = getters.getCustomerForm
 		const customer = {
-			id: Math.floor(Math.random() * 100),
+			id: mockUsers.length + 1,
 			firstName: firstName,
 			lastName: lastName,
 			emailAddress: emailAddress,
@@ -46,7 +48,6 @@ export const actions = {
 		mockUsers.push(customer)
 		commit(mutations.addCustomer, customer)
 		commit(mutations.clearCustomerForm)
-		console.log(router.base)
 		commit(mutations.setIsLoaded)
 	},
 	logout: ({ commit }) => {
@@ -57,7 +58,10 @@ export const actions = {
 	},
 	fetchProducts: ({ commit, getters }) => {
 		commit(mutations.setIsLoading)
-		const products = mockProducts.filter((product) => product.location.includes(getters.getCurrentUser.country))
+		var products = mockProducts
+		if (!getters.isAgent) {
+			products = products.filter((product) => product.location.includes(getters.getCurrentUser.country))
+		}
 		commit(mutations.setProducts, products)
 		commit(mutations.setIsLoaded)
 	},
@@ -83,10 +87,10 @@ export const actions = {
 	placeOrder: ({ commit, getters }, product) => {
 		commit(mutations.setIsLoading)
 		const notification = {
-			id: product.id,
+			id: getters.getNotifications.length + 1,
 			customerName: getters.getCurrentUser.emailAddress,
-			message: `Order for ${product.title} Placed a few minutes ago by ${getters.getCurrentUser.emailAddress}`,
-			time: Date.now(),
+			product: product.title,
+			time: `${moment(Date.now()).format("DD/MM/YYYY, h:mm:ss a")}`,
 		}
 		commit(mutations.placeOrder, product)
 		commit(mutations.sendNotification, notification)

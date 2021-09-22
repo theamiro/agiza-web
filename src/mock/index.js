@@ -12,8 +12,8 @@ export const mockUsers = [
 	},
 	{
 		id: "2",
-		firstName: "Customer",
-		lastName: "Custom",
+		firstName: "Ugandan",
+		lastName: "Customer",
 		emailAddress: "uganda@mail.com",
 		password: "Y3VzdG9tZXI=",
 		phoneNumber: "07453562781",
@@ -22,8 +22,8 @@ export const mockUsers = [
 	},
 	{
 		id: "3",
-		firstName: "Customer",
-		lastName: "Custom",
+		firstName: "Kenyan",
+		lastName: "Customer",
 		emailAddress: "kenya@mail.com",
 		password: "Y3VzdG9tZXI=",
 		phoneNumber: "07453562781",
@@ -52,7 +52,7 @@ export const mockProducts = [
 ]
 
 export const mockNotifications = [
-	{ id: "1", customerName: "Johansen Mwajuma", message: "Order Placed a few minutes ago", time: "08:09am", date: "21 Sep 21" },
-	{ id: "2", customerName: "Johansen Mwajuma", message: "Order Placed a few minutes ago", time: "08:09am", date: "21 Sep 21" },
-	{ id: "3", customerName: "Johansen Mwajuma", message: "Order Placed a few minutes ago", time: "08:09am", date: "21 Sep 21" },
+	{ id: "1", customerName: "Johansen Mwajuma", product: "iPhone Charger", time: "08:09am", date: "21 Sep 21" },
+	{ id: "2", customerName: "Susan Kimani", product: "Rayban Shades", time: "08:09am", date: "21 Sep 21" },
+	{ id: "3", customerName: "Billy Jean", product: "Musical Card", time: "08:09am", date: "21 Sep 21" },
 ]

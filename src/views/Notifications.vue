@@ -7,7 +7,7 @@
 		</v-row>
 		<v-row v-if="notifications.length">
 			<v-col cols="12" v-for="notification in notifications" :key="notification.id">
-				<notification-card :customerName="notification.customerName" :message="notification.message" :time="notification.time"> </notification-card>
+				<notification-card :notification="notification"> </notification-card>
 			</v-col>
 		</v-row>
 		<v-row v-else>

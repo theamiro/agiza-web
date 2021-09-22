@@ -27,9 +27,7 @@
 			ProductCard,
 		},
 		data() {
-			return {
-				searchTerm: "",
-			}
+			return {}
 		},
 		created() {
 			this.fetchProducts()

@@ -8,6 +8,7 @@
 					</div>
 
 					<div class="d-flex align-center">
+						<v-btn v-if="isLoggedIn && isAgent" to="/marketplace" elevation="0" class="ml-3">Marketplace</v-btn>
 						<v-btn v-if="!isLoggedIn" to="/login" elevation="0" class="ml-3">Login</v-btn>
 						<v-btn v-if="!isLoggedIn" to="/register" elevation="0" class="ml-3">Register</v-btn>
 						<v-btn v-if="isLoggedIn && isAgent" to="/customers" elevation="0" class="ml-3">Customer</v-btn>

@@ -60,9 +60,7 @@
 	export default {
 		name: "AddCustomer",
 		data() {
-			return {
-				isValid: !!this.customerForm,
-			}
+			return {}
 		},
 		components: {
 			EmptyState,
@@ -70,7 +68,6 @@
 		created() {
 			this.fetchCustomers()
 		},
-		watch: {},
 		methods: {
 			...mapActions(["fetchCustomers", "addCustomer"]),
 		},
