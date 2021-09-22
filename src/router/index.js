@@ -7,7 +7,7 @@ import Notifications from "@/views/Notifications.vue"
 import SingleProduct from "@/views/SingleProduct.vue"
 import Login from "@/views/Login.vue"
 import { store } from "@/store"
-import { Role } from "../helpers/Role"
+import { Role } from "@/helpers/Role"
 
 Vue.use(Router)
 
@@ -66,7 +66,7 @@ const routes = [
 	},
 	{
 		path: "*",
-		name: "All",
+		redirect: "/",
 	},
 ]
 

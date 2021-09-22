@@ -3,14 +3,10 @@ import * as mutations from "./mutation-types"
 import { mockProducts, mockCustomers } from "../mock/index"
 
 export const actions = {
-	login: ({ commit }) => {
+	login: ({ commit }, user) => {
 		commit(mutations.setIsLoading)
-		const user = {
-			emailAddress: "joh@mail.com",
-			role: "Customer",
-		}
 		const token = process.env.VUE_APP_DUMMY_TOKEN
-		console.log(token)
+		console.log(user)
 		commit(mutations.setToken, token)
 		commit(mutations.setCurrentUser, user)
 		router.push("/marketplace")

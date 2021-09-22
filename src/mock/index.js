@@ -1,3 +1,24 @@
+import { Role } from "@/helpers/Role"
+
+export const mockUsers = [
+	{
+		id: "1",
+		firstName: "Agent",
+		lastName: "007",
+		emailAddress: "agent@agent.com",
+		password: "agent",
+		role: Role.Agent,
+	},
+	{
+		id: "2",
+		firstName: "Customer",
+		lastName: "Custom",
+		emailAddress: "customer@customer.com",
+		password: "customer",
+		role: Role.Customer,
+	},
+]
+
 export const mockProducts = [
 	{ id: "1", image: "https://cdn.vuetifyjs.com/images/cards/cooking.png", title: "Dynamic Rayshield", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 2000, numberInStock: 200, location: "" },
 	{ id: "2", image: "", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: "" },

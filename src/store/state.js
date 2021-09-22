@@ -13,4 +13,5 @@ export const state = {
 	},
 	customer: {},
 	currentUser: {},
+	orders: [],
 }
