@@ -13,6 +13,7 @@
 									Log in
 								</v-btn>
 							</div>
+							<div class="mt-4 text-center">Yet to set your password?<router-link class="ml-2" to="/register">Register</router-link></div>
 						</v-form>
 					</v-card-text>
 				</v-card>

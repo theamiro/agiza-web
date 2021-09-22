@@ -15,6 +15,7 @@
 									Create Account
 								</v-btn>
 							</div>
+							<div class="mt-4 text-center">Already set your password?<router-link class="ml-2" to="/login">Log in</router-link></div>
 						</v-form>
 					</v-card-text>
 				</v-card>
@@ -28,7 +29,7 @@
 		data() {
 			return {
 				valid: false,
-				emailAddress: "odindo.michael@gmail.com",
+				emailAddress: "",
 				password: "",
 				confirmPassword: "",
 			}
