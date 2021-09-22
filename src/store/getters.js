@@ -3,6 +3,7 @@ import { Role } from "../helpers/Role"
 export const getters = {
 	isLoggedIn: (state) => !!state.token,
 	isAgent: (state) => state.currentUser.role === Role.Agent,
+	getCurrentUser: (state) => state.currentUser,
 	isLoading: (state) => state.isLoading,
 	getProduct: (state) => state.product,
 	getProducts: (state) => state.products,

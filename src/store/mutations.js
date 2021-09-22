@@ -39,4 +39,7 @@ export const mutations = {
 	sendNotification: (state, notification) => {
 		state.notifications.push(notification)
 	},
+	placeOrder: (state, product) => {
+		state.orders.push(product)
+	},
 }
