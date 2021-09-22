@@ -1,0 +1,14 @@
+export const setIsLoading = "setIsLoading"
+export const setIsLoaded = "setIsLoaded"
+export const setToken = "setToken"
+export const setCurrentUser = "setCurrentUser"
+export const logout = "logout"
+export const setProduct = "setProduct" // Single Product
+export const setProducts = "setProducts" // All Products
+export const setCustomers = "setCustomers" // All Customers
+export const addCustomer = "addCustomer"
+export const setCustomerForm = "setCustomerForm"
+export const clearCustomerForm = "clearCustomerForm"
+export const setNotifications = "setNotifications"
+export const sendNotification = "sendNotification"
+export const placeOrder = "placeOrder"
