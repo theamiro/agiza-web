@@ -47,7 +47,7 @@ export const mockProducts = [
 	{ id: "12", image: "https://picsum.photos/500/300?image=32", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: ["Uganda", "Kenya"] },
 	{ id: "13", image: "https://picsum.photos/500/300?image=35", title: "Dynamic Rayshield", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 2000, numberInStock: 200, location: "" },
 	{ id: "14", image: "https://picsum.photos/500/300?image=17", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: ["Kenya"] },
-	{ id: "15", image: "https://picsum.photos/500/300?image=32", title: "Dynamic Rayshield", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 2000, numberInStock: 200, location: "" },
+	{ id: "15", image: "https://picsum.photos/500/300?image=32", title: "Dynamic Rayshield", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 2000, numberInStock: 200, location: ["Uganda"] },
 	{ id: "16", image: "https://picsum.photos/500/300?image=3", title: "Musical Card", description: "Lorem ipsum dolor sit amet", currency: "KES", price: 200, numberInStock: 20, location: ["Kenya"] },
 ]
 
