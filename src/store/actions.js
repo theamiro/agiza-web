@@ -1,6 +1,6 @@
 import router from "@/router"
 import * as mutations from "./mutation-types"
-import { mockProducts, mockCustomers, mockNotifications } from "../mock/"
+import { mockProducts, mockUsers, mockNotifications } from "../mock/"
 import { Role } from "../helpers/Role"
 
 export const actions = {
@@ -11,13 +11,21 @@ export const actions = {
 
 		commit(mutations.setToken, token)
 		commit(mutations.setCurrentUser, { emailAddress: user.emailAddress, password: user.password, role: Role.Agent })
-		router.push("/marketplace")
+		router.push({ name: "Marketplace" })
+		commit(mutations.setIsLoaded)
+	},
+	register: ({ commit }, user) => {
+		commit(mutations.setIsLoading)
+		const entry = mockUsers.filter((entry) => entry.emailAddress === user.emailAddress)
+		if (entry.length > 0) {
+			console.log(true, entry[0])
+		}
 		commit(mutations.setIsLoaded)
 	},
 	logout: ({ commit }) => {
 		commit(mutations.setIsLoading)
 		commit(mutations.logout)
-		router.push("/login")
+		router.push({ name: "Login" })
 		commit(mutations.setIsLoaded)
 	},
 	fetchProducts: ({ commit }) => {
@@ -38,12 +46,13 @@ export const actions = {
 		commit(mutations.setCustomerForm, state.customerForm)
 		const { firstName, lastName, emailAddress, phoneNumber, country } = getters.getCustomerForm
 		const customer = {
-			id: getters.getCustomers.length + 1,
+			id: Math.floor(Math.random() * 100),
 			firstName: firstName,
 			lastName: lastName,
 			emailAddress: emailAddress,
 			phoneNumber: phoneNumber,
 			country: country,
+			role: Role.Customer,
 		}
 		commit(mutations.addCustomer, customer)
 		commit(mutations.clearCustomerForm)
@@ -52,7 +61,7 @@ export const actions = {
 	},
 	fetchCustomers: ({ commit }) => {
 		commit(mutations.setIsLoading)
-		const customers = mockCustomers
+		const customers = mockUsers.filter((user) => Role.Customer === user.role)
 		commit(mutations.setCustomers, customers)
 		commit(mutations.setIsLoaded)
 	},

@@ -7,11 +7,11 @@
 						<h2 class="text-h5 font-weight-bold">Create your Account</h2>
 						<p class="">You have been added onto Agiza, enter your preferred password to create you account</p>
 						<v-form v-model="valid">
-							<v-text-field dense rounded filled class="rounded-lg" v-model="emailAddress" label="Email Address" required></v-text-field>
-							<v-text-field dense rounded filled class="rounded-lg" v-model="password" label="Password" required autofocus></v-text-field>
+							<v-text-field dense rounded filled class="rounded-lg" v-model="emailAddress" label="Email Address" required autofocus></v-text-field>
+							<v-text-field dense rounded filled class="rounded-lg" v-model="password" label="Password" required></v-text-field>
 							<v-text-field dense rounded filled class="rounded-lg" v-model="confirmPassword" label="Confirm Password" required></v-text-field>
 							<div class="d-flex">
-								<v-btn elevation="0" x-large color="primary" block>
+								<v-btn elevation="0" x-large color="primary" block @click="register({ emailAddress, password })">
 									Create Account
 								</v-btn>
 							</div>
@@ -23,15 +23,19 @@
 	</v-container>
 </template>
 <script>
+	import { mapActions } from "vuex"
 	export default {
 		name: "Register",
 		data() {
 			return {
 				valid: false,
-				emailAddress: "odindo.michael@gmail.com",
+				emailAddress: "",
 				password: "",
 				confirmPassword: "",
 			}
+		},
+		methods: {
+			...mapActions(["register"]),
 		},
 	}
 </script>

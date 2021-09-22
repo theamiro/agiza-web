@@ -36,4 +36,7 @@ export const mutations = {
 	setNotifications: (state, notifications) => {
 		state.notifications = notifications
 	},
+	sendNotification: (state, notification) => {
+		state.notifications.push(notification)
+	},
 }
