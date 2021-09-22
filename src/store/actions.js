@@ -10,7 +10,7 @@ export const actions = {
 		commit(mutations.setIsLoading)
 		const user = mockUsers.find((entry) => entry.emailAddress === credentials.emailAddress && entry.password === window.btoa(unescape(encodeURIComponent(credentials.password))))
 		if (user) {
-			const token = process.env.VUE_APP_DUMMY_TOKEN
+			const token = process.env.VUE_APP_DUMMY_TOKEN || "this is a dummy token"
 			commit(mutations.setCurrentUser, user)
 			commit(mutations.setToken, token)
 			if (user.role === Role.Customer) {
