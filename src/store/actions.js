@@ -55,9 +55,9 @@ export const actions = {
 		router.push({ name: "Login" })
 		commit(mutations.setIsLoaded)
 	},
-	fetchProducts: ({ commit }) => {
+	fetchProducts: ({ commit, getters }) => {
 		commit(mutations.setIsLoading)
-		const products = mockProducts
+		const products = mockProducts.filter((product) => product.location.includes(getters.getCurrentUser.country))
 		commit(mutations.setProducts, products)
 		commit(mutations.setIsLoaded)
 	},
