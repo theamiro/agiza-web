@@ -8,9 +8,8 @@
 					</div>
 
 					<div class="d-flex align-center">
-						<v-btn to="/customers" elevation="0" class="ml-3">Customer</v-btn>
-						<v-btn to="/notifications" elevation="0" class="ml-3">Notifications</v-btn>
-
+						<v-btn v-if="isLoggedIn && isAgent" to="/customers" elevation="0" class="ml-3">Customer</v-btn>
+						<v-btn v-if="isLoggedIn && isAgent" to="/notifications" elevation="0" class="ml-3">Notifications</v-btn>
 						<v-btn v-if="isLoggedIn" elevation="0" class="ml-3" @click="logout()">Logout</v-btn>
 					</div>
 				</v-col>
@@ -23,8 +22,10 @@
 	export default {
 		name: "Navigation",
 		methods: {
-			...mapGetters(["isLoggedIn"]),
 			...mapActions(["logout"]),
+		},
+		computed: {
+			...mapGetters(["isLoggedIn", "isAgent"]),
 		},
 	}
 </script>

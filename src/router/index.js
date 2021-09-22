@@ -64,6 +64,10 @@ const routes = [
 			role: Role.Customer,
 		},
 	},
+	{
+		path: "*",
+		name: "All",
+	},
 ]
 
 const router = new Router({
@@ -74,13 +78,14 @@ const router = new Router({
 router.beforeEach((to, _from, next) => {
 	if (to.meta.requiresAuth) {
 		if (!store.getters.isLoggedIn) {
-			next({ name: "Login" })
+			return next({ name: "Login" })
 		} else {
-			next()
+			if (to.meta.role === Role.Agent && !store.getters.isAgent) {
+				return next({ name: "Marketplace" })
+			}
 		}
-	} else {
-		next()
 	}
+	next()
 })
 
 export default router

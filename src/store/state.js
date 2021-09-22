@@ -12,4 +12,5 @@ export const state = {
 		country: null,
 	},
 	customer: {},
+	currentUser: {},
 }

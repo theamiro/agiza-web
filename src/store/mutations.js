@@ -8,7 +8,11 @@ export const mutations = {
 	setToken: (state, token) => {
 		state.token = token
 	},
+	setCurrentUser: (state, user) => {
+		state.currentUser = user
+	},
 	logout: (state) => {
+		state.currentUser = {}
 		state.token = null
 	},
 	setProduct: (state, product) => {
